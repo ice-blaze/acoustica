@@ -1,0 +1,49 @@
+$width: 1500px;
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#base {
+  width: $width;
+}
+
+.portrait {
+  width: 147px;
+  top: 417px;
+}
+
+#first {
+  left: 461px;
+}
+
+#second {
+  left: 655px;
+}
+
+#third {
+  left: 846px;
+}
+
+#selectors {
+  position: absolute;
+  //   top: 1130px;
+  left: $width;
+  display: flex;
+  flex-direction: row;
+  height: 99vh;
+  overflow-y: scroll;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+:host {
+  font-family: "Roboto", sans-serif;
+}
