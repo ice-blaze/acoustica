@@ -5,6 +5,11 @@ $width: 1500px;
   top: 0;
   left: 0;
 }
+#to-save {
+  position: absolute;
+  width: $width;
+  height: 1125px; // meh
+}
 
 #base {
   width: $width;

@@ -2,6 +2,8 @@ import { IMAGE_CONFIG } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import FileSaver from 'file-saver';
+import html2canvas from 'html2canvas';
 
 
 @Component({
@@ -47,4 +49,17 @@ export class AppComponent {
     'pics/DSC05468.jpg',
     'pics/DSC05649.jpg'
   ];
+
+  saveImage() {
+    const image = document.querySelector("#to-save") as HTMLElement
+    html2canvas(image).then(canvas => {
+      canvas.toBlob(function (blob) {
+        if (blob) {
+          FileSaver.saveAs(blob, 'acoustica.jpg');
+        } else {
+          console.error('Canvas to Blob conversion failed');
+        }
+      });
+    });
+  }
 }
