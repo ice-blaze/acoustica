@@ -14,9 +14,9 @@ import html2canvas from 'html2canvas';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  readonly firstIndex = '';
-  readonly secondIndex = '';
-  readonly thirdIndex = '';
+  firstIndex = '';
+  secondIndex = '';
+  thirdIndex = '';
 
   readonly picsFilePaths = [
     'pics/DSC00221.jpg',
@@ -49,6 +49,18 @@ export class AppComponent {
     'pics/DSC05468.jpg',
     'pics/DSC05649.jpg'
   ];
+
+  swap23() {
+    const temp = this.secondIndex;
+    this.secondIndex = this.thirdIndex;
+    this.thirdIndex = temp;
+  }
+
+  swap12() {
+    const temp = this.firstIndex;
+    this.firstIndex = this.secondIndex;
+    this.secondIndex = temp;
+  }
 
   saveImage() {
     const image = document.querySelector("#to-save") as HTMLElement
